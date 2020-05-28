@@ -1,0 +1,7 @@
+rootProject.name = 'spring-cloud-flow'
+include 'product-service'
+include 'discount-service'
+include 'courier-service'
+include 'spring-cloud-starter-dataflow-server-local'
+include 'spring-cloud-dataflow-shell'
+

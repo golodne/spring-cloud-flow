@@ -1,0 +1,47 @@
+plugins {
+    //id 'org.springframework.boot' version '2.0.0.RELEASE'
+    //id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'java'
+}
+
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main.java.srcDir "src/main/java"
+    main.resources.srcDir "src/main/resources"
+}
+/*
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'ru.learning.SpringDataFlowServerApplication'
+        )
+    }
+}
+*/
+dependencies {
+    compile 'javax.xml.bind:jaxb-api:2.3.0'
+ //   compile 'javax.xml.ws:jaxws-api:2.3.0'
+    compile 'javax.jws:jsr181-api:1.0-MR1'
+    compile 'javax.activation:javax.activation-api:1.2.0'
+    compile 'javax.annotation:javax.annotation-api:1.3'
+
+    compile 'javax.xml.bind:jaxb-api:2.3.1'
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-dataflow-server-local', version: '1.7.3.RELEASE'
+    //compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-dataflow-server-local', version: '1.7.4.RELEASE'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
